@@ -1,8 +1,8 @@
 .idea/
 node_modules/
 
-app/js/*.js
-!app/js/*.min.js
+www/js/*.js
+!www/js/*.min.js
 
-app/css/*.css
-!app/css/*.min.css
+www/css/*.css
+!www/css/*.min.css
