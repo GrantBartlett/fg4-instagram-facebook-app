@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
 
     var js_src_files = [
-        'less/js/*.js'
     ];
 
     // Project configuration.
@@ -11,6 +10,7 @@ module.exports = function (grunt) {
 
 
         // within grunt.initConfig
+
         /*
         concat: {
             options: {
@@ -19,9 +19,10 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: js_src_files,
-                dest: 'www/assets/js/app.js'
+                dest: 'www/assets/lib/angular.js'
             }
         },
+
 
         uglify: {
             options: {
@@ -30,7 +31,7 @@ module.exports = function (grunt) {
             },
             build: {
                 src: js_src_files,
-                dest: 'www/assets/js/app.min.js'
+                dest: 'www/assets/js/angular.js'
             }
         },
         */
@@ -81,7 +82,7 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
-            //compress: ['less', 'concat', 'uglify'],
+            //compress: ['less', 'concat'],
             compress: ['less'],
             start: {
                 tasks: ['watch'],

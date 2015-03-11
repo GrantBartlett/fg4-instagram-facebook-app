@@ -1,0 +1,1 @@
+angular.module('fg4InstagramApp', ['ngRoute']);
