@@ -1,0 +1,8 @@
+.idea/
+node_modules/
+
+app/js/*.js
+!app/js/*.min.js
+
+app/css/*.css
+!app/css/*.min.css
