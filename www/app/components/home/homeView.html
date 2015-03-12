@@ -1,11 +1,45 @@
-<h1>Hello FG4 Stream!</h1>
+<article class="col-md-4" ng-repeat="feed in instagramFeed">
+    <div class="box">
+        <section class="entry-category">
+            <ul class="list-inline">
+                <li ng-repeat="tag in feed.tags">
+                    #{{ tag }},
+                </li>
+            </ul>
+        </section>
 
-<div ng-repeat="feed in instagramFeed">
-    <ul class="list-inline">
-        <li>Posted: {{feed.created_time * 1000 | date:'yyyy-MM-dd HH:mm '}}</li>
-        <li>Caption: {{feed.caption.text}}</li>
-        <li>Likes: {{feed.likes.count}}</li>
-        <li>Type: {{feed.type}}</li>
-    </ul>
-    <img ng-src="{{ feed.images.standard_resolution.url }}" style="width:20%">
-</div>
+        <figure>
+            <img ng-src="{{feed.images.standard_resolution.url}}" class="img-responsive">
+        </figure>
+
+        <section class="entry-content">
+            <p>{{feed.caption.text}}</p>
+        </section>
+
+        <footer class="entry-footer app">
+            <ul class="list-inline">
+                <li>
+                    <i class="fa fa-calendar-o fa-2x"></i>
+                    {{feed.created_time * 1000 | date:'dd MMMM, yyyy'}}
+                </li>
+
+                <li>
+                    <div ng-switch="feed.type">
+                        <i class="fa fa-picture-o fa-2x" ng-switch-when="image"></i>
+                        <i class="fa fa fa-film fa-2x" ng-switch-when="video"></i>
+                        <i ng-switch-default></i>
+                    </div>
+                </li>
+
+                <li>
+                    <i class="fa fa-comment-o fa-2x"></i>
+                    {{ feed.comments.count }}
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+
+
+</article>
+

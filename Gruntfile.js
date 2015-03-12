@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
 
     var js_src_files = [
+        'node_modules/packery/dist/packery.pkgd.min.js',
+        'node_modules/imagesloaded/imagesloaded.pkgd.min.js'
     ];
 
     // Project configuration.
@@ -11,7 +13,7 @@ module.exports = function (grunt) {
 
         // within grunt.initConfig
 
-        /*
+
         concat: {
             options: {
                 separator: ';\n',
@@ -19,10 +21,9 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: js_src_files,
-                dest: 'www/assets/lib/angular.js'
+                dest: 'www/assets/lib/scripts.js'
             }
         },
-
 
         uglify: {
             options: {
@@ -31,10 +32,10 @@ module.exports = function (grunt) {
             },
             build: {
                 src: js_src_files,
-                dest: 'www/assets/js/angular.js'
+                dest: 'www/assets/js/scripts.js'
             }
         },
-        */
+
 
         less: {
             dev: {
@@ -76,14 +77,14 @@ module.exports = function (grunt) {
             },*/
 
             css: {
-                files: 'less/*/*.less',
+                files: 'less/*.less',
                 tasks: ['concurrent:compress']
             }
         },
 
         concurrent: {
-            //compress: ['less', 'concat'],
-            compress: ['less'],
+            compress: ['less', 'concat'],
+            //compress: ['less'],
             start: {
                 tasks: ['watch'],
                 options: {
