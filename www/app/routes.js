@@ -3,12 +3,7 @@ angular.module('fg4InstagramApp').config(function ($routeProvider) {
 
         .when('/', {
             templateUrl: "app/components/home/homeView.html",
-            controller: "HomeIndexController",
+            controller: "HomeController",
             controllerAs: "HomeCtrl"
         })
-
-        .when('/recent', {
-            templateUrl: "app/components/recent/recentView.html"
-        })
-
 });

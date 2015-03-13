@@ -1,1 +1,1 @@
-angular.module('fg4InstagramApp', ['ngRoute']);
+angular.module('fg4InstagramApp', ['ngRoute', 'angular-images-loaded']);

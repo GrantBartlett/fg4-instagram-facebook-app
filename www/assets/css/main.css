@@ -6581,6 +6581,9 @@ p {
 .entry-category {
   padding: 25px;
 }
+.entry-category ul {
+  margin: 0;
+}
 .entry-category {
   margin: 0 5px 5px 0;
   color: #cccccc;

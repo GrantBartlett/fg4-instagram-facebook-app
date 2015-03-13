@@ -1,45 +1,13 @@
-<article class="col-md-4" ng-repeat="feed in instagramFeed">
-    <div class="box">
-        <section class="entry-category">
-            <ul class="list-inline">
-                <li ng-repeat="tag in feed.tags">
-                    #{{ tag }},
-                </li>
-            </ul>
-        </section>
+<div id="layout" class="listing">
 
-        <figure>
-            <img ng-src="{{feed.images.standard_resolution.url}}" class="img-responsive">
-        </figure>
-
-        <section class="entry-content">
-            <p>{{feed.caption.text}}</p>
-        </section>
-
-        <footer class="entry-footer app">
-            <ul class="list-inline">
-                <li>
-                    <i class="fa fa-calendar-o fa-2x"></i>
-                    {{feed.created_time * 1000 | date:'dd MMMM, yyyy'}}
-                </li>
-
-                <li>
-                    <div ng-switch="feed.type">
-                        <i class="fa fa-picture-o fa-2x" ng-switch-when="image"></i>
-                        <i class="fa fa fa-film fa-2x" ng-switch-when="video"></i>
-                        <i ng-switch-default></i>
-                    </div>
-                </li>
-
-                <li>
-                    <i class="fa fa-comment-o fa-2x"></i>
-                    {{ feed.comments.count }}
-                </li>
-            </ul>
-        </footer>
+    <div ng-repeat="item in instagramFeed" packery-listing class="col-md-4 clearfix">
+        <div class="box">
+            {{item.caption.text}}
+            <div images-loaded="imgLoadedEvents">
+                <img ng-src="{{item.images.standard_resolution.url}}" class="img-responsive">
+            </div>
+        </div>
     </div>
 
-
-
-</article>
+</div>
 
