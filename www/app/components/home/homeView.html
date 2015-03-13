@@ -1,12 +1,16 @@
 <div id="layout" class="listing">
 
     <div ng-repeat="item in instagramFeed" packery-listing class="col-md-4 clearfix">
-        <div class="box">
-            {{item.caption.text}}
+        <article class="box">
+
+            <section class="entry-content">
+                {{item.caption.text}}
+            </section>
+
             <div images-loaded="imgLoadedEvents">
                 <img ng-src="{{item.images.standard_resolution.url}}" class="img-responsive">
             </div>
-        </div>
+        </article>
     </div>
 
 </div>
