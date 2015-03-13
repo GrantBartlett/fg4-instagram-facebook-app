@@ -8,5 +8,4 @@ angular.module('fg4InstagramApp').controller('HomeController', ['$scope', '$http
 
     $scope.imgLoadedEvents = image;
 
-
 }]);
